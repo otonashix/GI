@@ -1,0 +1,24 @@
+codigos
+
+function moveimageByMonkey($server_root,$file_name){
+
+  global $php_errorsize;
+  //Directorio
+  $php_serverfolder = $_SERVER['DOCUMENT_ROOT'].'/'.$server_root.'/';
+
+  //Encriptar nombre
+  $php_nombre = strtoupper(substr(hash('sha1',$_POST['titulo'].$_FILES[$file_name]['name'].date("Y-m-d  H:i:s",strtotime("+18 hours"))),0,35).'.'.pathinfo($_FILES[$file_name]['name'], PATHINFO_EXTENSION));
+  //subir al servidor
+  $php_movefile = move_uploaded_file(htmlspecialchars($_FILES[$file_name]['tmp_name']),$php_serverfolder.$php_nombre); 
+  
+  //No se pudo subir la imagen, muestra el error y suma 1 al error para que no haga los insert.
+
+  if(!$php_movefile ) {  
+    echo " La imagen ".$_FILES[$file_name]['name']." no cumple las caracteristicas.<br>"; 
+    $php_errorsize++;
+  }
+
+  //nombre para guardar en la base de datos
+  return $php_nombre;
+
+}
