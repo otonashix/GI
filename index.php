@@ -57,7 +57,7 @@ $connection->connect();
 	<body class="is-preload">
 		<div id="page-wrapper">
 
-			<!-- Header -->
+			<!-- Header 
 				<header id="header">
 					
 					<nav id="nav">
@@ -66,15 +66,18 @@ $connection->connect();
 							<li><a href="index.html">Otro</a></li>		
 						</ul>
 					</nav>
-				</header>
+				</header>-->
 
 			<!-- Main -->
-				<section id="main" class="container medium">
-					<header>
-						<h2>Iniciar sesión</h2>
-						<p>Ingrese su usuario y contraseña.</p>
-					</header>
+				<section id="main" class="container small">
+					
 					<div class="box">
+					<header>
+						<div align= "center">
+						<h2>Gestion Informatica</h2>
+						<p>Ingrese su usuario y contraseña.</p>
+						</div>
+					</header>
 						<form id="Login" name ="Login" action="" method="post">
 							<div id="pageMessage"></div>
 							<div id="pageAnimation" align="center">
@@ -84,12 +87,12 @@ $connection->connect();
 							<div class="row gtr-50 gtr-uniform">							
 
 								<div class="col-12">
-									<h3>Usuario</h3>
-									<input type="text" name="usuario" id="usuario" value="" placeholder="usuario" autocomplete="off"/>
+									
+									<input type="text" name="usuario" id="usuario" value="" placeholder="Digite su usuario" autocomplete="off"/>
 								</div>
 								<div class="col-12">
-									<h3>Contraseña</h3>
-									<input type="password" name="contrasenia" id="contrasenia" value="" placeholder="***" autocomplete="off"/>
+									
+									<input type="password" name="contrasenia" id="contrasenia" value="" placeholder="Digite su contraseña" autocomplete="off"/>
 								</div>
 								<div class="col-12">									
 									<input type="submit" value="Ingresar" style="width: 100%"/>
